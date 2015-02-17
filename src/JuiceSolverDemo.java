@@ -9,7 +9,7 @@ public class JuiceSolverDemo {
 
     public static void main(String[] args) {
         JuiceSolver juiceSolver = new JuiceSolver();
-        final List<Juice> juices = IOUtils.inputData(INPUT_FILE);
+        List<Juice> juices = IOUtils.inputData(INPUT_FILE);
         juiceSolver.addSubtask(new FirstSubtask(FIRST_SUBTASK_OUTPUT_FILE));
         juiceSolver.addSubtask(new SecondSubtask(SECOND_SUBTASK_OUTPUT_FILE));
         juiceSolver.addSubtask(new ThirdSubtask(THIRD_SUBTASK_OUTPUT_FILE));
