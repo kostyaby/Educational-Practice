@@ -10,17 +10,38 @@ public class Graph {
     private int[] whichIsTaken;
     private boolean[] isUsed;
 
-    public Graph(List<List<Integer>> adjacencyLists) {
-        numberOfVerteces = adjacencyLists.size();
+    public Graph(int numberOfVerteces) {
+        this.numberOfVerteces = numberOfVerteces;
         this.adjacencyLists = new ArrayList<>();
 
-        for (List<Integer> adjacencyList : adjacencyLists) {
-            this.adjacencyLists.add(new ArrayList<>(adjacencyList));
+        for (int i = 0; i < numberOfVerteces; i++) {
+            this.adjacencyLists.add(new ArrayList<Integer>());
         }
 
         takenBy = new int[numberOfVerteces];
         whichIsTaken = new int[numberOfVerteces];
         isUsed = new boolean[numberOfVerteces];
+    }
+
+    public void addArc(int u, int v) {
+        adjacencyLists.get(u).add(v);
+    }
+
+    public List< List<Integer> > minimalPathCover() {
+        kuhnAlgorithm();
+        List< List<Integer> > paths = new ArrayList<>();
+        for (int v = 0; v < numberOfVerteces; v++) {
+            if (takenBy[v] == -1) {
+                List<Integer> path = new ArrayList<>();
+                int u = v;
+                do {
+                    path.add(u);
+                    u = whichIsTaken[u];
+                } while (u != -1);
+                paths.add(path);
+            }
+        }
+        return paths;
     }
 
     private boolean dfs(int v) {
@@ -50,20 +71,4 @@ public class Graph {
         }
     }
 
-    public List< List<Integer> > minimalPathCover() {
-        kuhnAlgorithm();
-        List< List<Integer> > paths = new ArrayList<>();
-        for (int v = 0; v < numberOfVerteces; v++) {
-            if (takenBy[v] == -1) {
-                List<Integer> path = new ArrayList<>();
-                int u = v;
-                do {
-                    path.add(u);
-                    u = whichIsTaken[u];
-                } while (u != -1);
-                paths.add(path);
-            }
-        }
-        return paths;
-    }
 }
