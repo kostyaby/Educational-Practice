@@ -1,0 +1,39 @@
+.container {
+    background-color: #ccc;
+
+    padding: 5px;
+}
+
+[class*="col-"] {
+    background-color: #ddd;
+    padding: 5px;
+    padding-top: 5px;
+}
+
+.inner {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+}
+
+.avatar {
+    height: 30px;
+    width:  30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.input-field {
+    height: 30px;
+    width: 120px;
+}
+
+.static-text {
+    /*font-size: 12px;*/
+    padding: 15px;
+}
+
+
+
