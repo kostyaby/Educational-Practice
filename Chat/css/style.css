@@ -1,11 +1,10 @@
 .container {
-    background-color: #ccc;
-
+/*    background-color: #ccc;*/
     padding: 5px;
 }
 
 [class*="col-"] {
-    background-color: #ddd;
+/*    background-color: #ddd;*/
     padding: 5px;
     padding-top: 5px;
 }
@@ -16,6 +15,10 @@
     border: 1px solid #ddd;
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2);
+}
+
+.chat-inner {
+    height: 350px;
 }
 
 .avatar {
@@ -31,8 +34,41 @@
 }
 
 .static-text {
-    /*font-size: 12px;*/
     padding: 15px;
+}
+
+.author-name {
+    padding: 0px;
+    width: 400px;
+}
+
+.message-box {
+    padding: 10px;
+    width: 450px;
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.your-message {
+    background-color: #98FB98;
+}
+
+.opponent-message {
+    background-color: #87CEFA;
+}
+
+
+.fixed-height {
+    padding: 5px 5px;
+    font-size: 15px;
+    line-height: normal;
+}
+
+.icon-padding {
+    padding-left: 5px;
 }
 
 
